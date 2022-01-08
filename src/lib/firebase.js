@@ -6,12 +6,12 @@ import 'firebase/auth';
 // import { seedDatabase } from '../seed';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyC4CuVz-LuUtrN0s4iDDMWYJRp0-P9DoMA',
-  authDomain: 'instagram-c3ce1.firebaseapp.com',
-  projectId: 'instagram-c3ce1',
-  storageBucket: 'instagram-c3ce1.appspot.com',
-  messagingSenderId: '780502457078',
-  appId: '1:780502457078:web:f6830de77fb776d9516ad7',
+  apiKey: 'AIzaSyBlGBpL1gI4NmTZpTcmmTrMpcD4Y_mNd-g',
+  authDomain: 'instagram-byvrd.firebaseapp.com',
+  projectId: 'instagram-byvrd',
+  storageBucket: 'instagram-byvrd.appspot.com',
+  messagingSenderId: '704094527623',
+  appId: '1:704094527623:web:404193872da4d462d61822',
 };
 
 const firebase = Firebase.initializeApp(firebaseConfig);

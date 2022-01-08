@@ -6,6 +6,7 @@ import * as ROUTES from '../constants/routes';
 export default function Login() {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
+  console.log(firebase);
 
   // STATES
   const [emailAddress, setEmailAddress] = useState('');
