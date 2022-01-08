@@ -6,7 +6,8 @@ import * as ROUTES from './constants/routes';
 //react lazy dynamic imports
 const login = lazy(() => import('./pages/login.js'));
 const SignUP = lazy(() => import('./pages/sign-up.js'));
-const NotFound = lazy(() => import('./pages/login.js.js'));
+const NotFound = lazy(() => import('./pages/notFound.js'));
+const Dashboard = lazy(() => import('./pages/dashboard.js'));
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
         <Switch>
           <Route path={ROUTES.LOGIN} component={login} />
           <Route path={ROUTES.SIGN_UP} component={SignUP} />
-          <Route path={ROUTES.NOT_FOUND} component={NotFound} />
+          <Route path={ROUTES.DASHBOARD} component={Dashboard} />
+          <Route component={NotFound} />
         </Switch>
       </Suspense>
     </BrowserRouter>
