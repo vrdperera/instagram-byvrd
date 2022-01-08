@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import Login from './pages/login';
 import * as ROUTES from './constants/routes';
 import UserContext from './context/user';
-import useAuthListener from './hooks/useAuthListener';
+import UseAuthListener from './hooks/useAuthListener';
 
 //react lazy dynamic imports
 const login = lazy(() => import('./pages/login.js'));
@@ -12,7 +12,7 @@ const NotFound = lazy(() => import('./pages/notFound.js'));
 const Dashboard = lazy(() => import('./pages/dashboard.js'));
 
 export default function App() {
-  const { user } = useAuthListener();
+  const { user } = UseAuthListener();
 
   return (
     <UserContext.Provider value={{ user }}>
