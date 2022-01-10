@@ -9,7 +9,7 @@ export default function SideBar() {
     <div>
       <p>im the SideBar</p>
       <User fullName={fullName} username={username} />
-      <Suggestions />
+      <Suggestions userId={userId} />
     </div>
   );
 }
