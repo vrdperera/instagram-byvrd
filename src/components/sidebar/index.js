@@ -8,7 +8,7 @@ export default function SideBar() {
   return (
     <div>
       <p>im the SideBar</p>
-      <User />
+      <User fullName={fullName} username={username} />
       <Suggestions />
     </div>
   );
