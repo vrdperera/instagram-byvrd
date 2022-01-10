@@ -10,15 +10,27 @@ export async function doesUserNameExsit(username) {
   return results.docs.map((user) => user.data().length > 0);
 }
 
-export async function getUserById(userId) {
-  const results = await firebase
+export async function getUserByUserId(userId) {
+  const result = await firebase
     .firestore()
     .collection('users')
-    .where('userId ', '===', userId)
+    .where('userId', '==', userId)
     .get();
 
-  const user = results
-    .docs()
-    .map((user) => ({ ...user.data(), docId: user.id }));
+  const user = result.docs.map((item) => ({ ...item.data(), docId: item.id }));
   return user;
 }
+
+// export async function getUserByUserId(userId) {
+//   const result = await firebase
+//     .firestore()
+//     .collection('users')
+//     .where('userId', '==', userId)
+//     .get();
+//   const user = result.docs.map((item) => ({
+//     ...item.data(),
+//     docId: item.id,
+//   }));
+
+//   return user;
+// }
