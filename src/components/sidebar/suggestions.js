@@ -1,3 +1,3 @@
-export default function Suggestions() {
-  return <p> Ima Suggestion </p>;
+export default function Suggestions({ userId }) {
+  return <p> {userId} </p>;
 }

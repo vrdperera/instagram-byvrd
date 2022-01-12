@@ -3,11 +3,12 @@ import User from './user';
 import Suggestions from './suggestions';
 
 export default function SideBar() {
-  const { user: fullName, username, userId } = useUser();
-  console.log(fullName, username, userId);
+  const {
+    user: { fullName, username, userId },
+  } = useUser();
+  // console.log(fullName, username, userId);
   return (
     <div>
-      <p>im the SideBar</p>
       <User fullName={fullName} username={username} />
       <Suggestions userId={userId} />
     </div>
