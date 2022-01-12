@@ -30,8 +30,8 @@ const User = ({ fullName, username }) =>
   );
 
 User.propTypes = {
-  fullName: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
+  fullName: PropTypes,
+  username: PropTypes,
 };
 
 export default memo(User);
