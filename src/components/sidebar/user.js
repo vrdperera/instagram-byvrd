@@ -4,7 +4,7 @@ import Skeleton from 'react-loading-skeleton';
 import { memo } from 'react';
 import { DEFAULT_IMAGE_PATH } from '../../constants/path';
 
-const User = ({ fullName, username, userId }) =>
+const User = ({ fullName, username }) =>
   !fullName || !username ? (
     <Skeleton count={1} height={61} />
   ) : (
