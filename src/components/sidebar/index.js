@@ -6,6 +6,7 @@ export default function SideBar() {
   const {
     user: { fullName, username, userId },
   } = useUser();
+
   // console.log(fullName, username, userId);
   return (
     <div>
