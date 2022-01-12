@@ -34,4 +34,4 @@ User.propTypes = {
   username: PropTypes.string.isRequired,
 };
 
-export default User;
+export default memo(User);
