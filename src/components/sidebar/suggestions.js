@@ -3,19 +3,19 @@ import { useEffect, useState } from 'react';
 import { Skeleton } from '@mui/material';
 import { getSuggestedProfiles } from '../../services/firebase';
 
-export default function Suggestions({ userId }) {
+export default function Suggestions({ userId, following }) {
   const [profiles, setProfiles] = useState(null);
 
   useEffect(() => {
     async function suggestedProfiles() {
-      const response = await getSuggestedProfiles(userId);
+      const response = await getSuggestedProfiles(userId, following);
       setProfiles(response);
     }
 
     if (userId) {
       suggestedProfiles();
     }
-  }, [userId]);
+  }, [userId, following]);
 
   return !profiles ? (
     <Skeleton />
@@ -42,4 +42,5 @@ export default function Suggestions({ userId }) {
 
 Suggestions.propTypes = {
   userId: PropTypes.string,
+  following: PropTypes.array,
 };

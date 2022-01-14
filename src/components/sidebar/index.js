@@ -4,14 +4,14 @@ import Suggestions from './suggestions';
 
 export default function SideBar() {
   const {
-    user: { fullName, username, userId },
+    user: { fullName, username, userId, following },
   } = useUser();
 
-  // console.log(fullName, username, userId);
+  // console.log(following);
   return (
     <div>
       <User fullName={fullName} username={username} />
-      <Suggestions userId={userId} />
+      <Suggestions userId={userId} following={following} />
     </div>
   );
 }
