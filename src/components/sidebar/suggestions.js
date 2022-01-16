@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Skeleton } from '@mui/material';
 import { getSuggestedProfiles } from '../../services/firebase';
+import SuggestedProfile from './suggestedProfile';
 
-export default function Suggestions({ userId, following }) {
+export default function Suggestions({ userId, following, loggedInUserDocId }) {
   const [profiles, setProfiles] = useState(null);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export default function Suggestions({ userId, following }) {
         <p className="font-bold text-gray-base">Suggestions for you</p>
       </div>
       <div className="mt-4 grid gap-5">
-        {/* {profiles.map((profile) => (
+        {profiles.map((profile) => (
           <SuggestedProfile
             key={profile.docId}
             profileDocId={profile.docId}
@@ -34,7 +35,7 @@ export default function Suggestions({ userId, following }) {
             userId={userId}
             loggedInUserDocId={loggedInUserDocId}
           />
-        ))} */}
+        ))}
       </div>
     </div>
   ) : null;
@@ -43,4 +44,5 @@ export default function Suggestions({ userId, following }) {
 Suggestions.propTypes = {
   userId: PropTypes.string,
   following: PropTypes.array,
+  loggedInUserDocId: PropTypes.string,
 };

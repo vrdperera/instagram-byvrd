@@ -45,3 +45,34 @@ export async function getSuggestedProfiles(userId, following) {
         profile.userId !== userId && !following.includes(profile.userId)
     );
 }
+
+export async function updateLoggedInUserFollowing(
+  loggedInUserDocId,
+  profileId,
+  isUserFollowing
+) {
+  await firebase
+    .firestore()
+    .collection('users')
+    .doc(loggedInUserDocId)
+    .update({
+      following: isUserFollowing
+        ? FieldValue.arrayRemove(profileId)
+        : FieldValue.arrayUnion(profileId),
+    });
+}
+export async function updateFollowedUserFollowers(
+  profileDocId,
+  loggedInUserDocId,
+  isUserFollowing
+) {
+  await firebase
+    .firestore()
+    .collection('users')
+    .doc(profileDocId)
+    .update({
+      following: isUserFollowing
+        ? FieldValue.arrayRemove(loggedInUserDocId)
+        : FieldValue.arrayUnion(loggedInUserDocId),
+    });
+}
