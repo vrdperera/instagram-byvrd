@@ -26,7 +26,7 @@ export default function SuggestedProfile({
     <div className="flex flex-row items-center justify-between">
       <div className="flex items-center justify-between">
         <img
-          className="rounded-full w-8 flex mr-3"
+          className="rounded-full w-10 flex mr-3"
           src={`/images/avatars/${username}.jpg`}
           alt=""
           onError={(e) => {
@@ -35,6 +35,7 @@ export default function SuggestedProfile({
         />
         <Link to={`/p/${username}`}>
           <p className="font-bold text-sm">{username}</p>
+          <p className="text-xs text-gray-400">Instagram recommended</p>
         </Link>
       </div>
       <button
