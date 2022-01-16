@@ -1,5 +1,6 @@
 import { Skeleton } from '@mui/material';
 import usePhotos from '../hooks/usePhotos';
+import Post from './post';
 
 export default function Timeline() {
   const { photos } = usePhotos();
@@ -11,20 +12,20 @@ export default function Timeline() {
           {[...new Array(4)].map((_, idx) => {
             return (
               <Skeleton
-                sx={{ bgcolor: 'grey.400' }}
-                className="mb-1"
+                sx={{ bgcolor: 'grey.200' }}
+                className="mb-5"
                 key={idx}
                 variant="rectangular"
-                width={320}
-                height={400}
+                width={640}
+                height={600}
               />
             );
           })}
         </>
       ) : photos?.length > 0 ? (
-        photos.map((content) => <p key={content.docId}>{content.docId}</p>)
+        photos.map((content) => <Post key={content.docId} content={content} />)
       ) : (
-        <p className="text-center text-2xl">Follow people to see photos</p>
+        <p className="text-center text-2xl">Follow people to see photos!</p>
       )}
     </div>
   );
