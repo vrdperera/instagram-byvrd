@@ -9,10 +9,23 @@ export default function Timeline() {
       {!photos ? (
         <>
           {[...new Array(4)].map((_, idx) => {
-            return <Skeleton id={idx} />;
+            return (
+              <Skeleton
+                sx={{ bgcolor: 'grey.400' }}
+                className="mb-1"
+                key={idx}
+                variant="rectangular"
+                width={320}
+                height={400}
+              />
+            );
           })}
         </>
-      ) : null}
+      ) : photos?.length > 0 ? (
+        photos.map((content) => <p key={content.docId}>{content.docId}</p>)
+      ) : (
+        <p className="text-center text-2xl">Follow people to see photos</p>
+      )}
     </div>
   );
 }
