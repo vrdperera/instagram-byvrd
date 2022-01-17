@@ -71,7 +71,7 @@ export default function SignUp() {
         />
       </div>
       <div className="flex flex-col w-6/12  ">
-        <div className="flex  flex-col items-center bg-white p-4 border border-gray-primary mb-4 ">
+        <div className="flex  flex-col items-center bg-white p-4 border border-gray-300 mb-4 ">
           <h1 className="flex justify-center w-full">
             <img src="/images/logo.png" alt="" className="mt-2  w-6/12 mb-4" />
           </h1>
@@ -81,7 +81,7 @@ export default function SignUp() {
               aria-label="Enter your phone number or email"
               type="email"
               placeholder="Phone number, username, or email"
-              className="text-sm text-gray-base  w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded  mb-2 focus:outline-none "
+              className="text-sm text-gray-base  w-full mr-3 py-5 px-4 h-2 border border-gray-300 rounded  mb-2 focus:outline-none "
               onChange={({ target }) => setEmailAddress(target.value)}
               value={emailAddress}
             />
@@ -89,7 +89,7 @@ export default function SignUp() {
               aria-label="Enter your full name"
               type="text"
               placeholder="Full Name"
-              className="text-sm text-gray-base  w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded  mb-2 focus:outline-none "
+              className="text-sm text-gray-base  w-full mr-3 py-5 px-4 h-2 border border-gray-300 rounded  mb-2 focus:outline-none "
               onChange={({ target }) => setFullName(target.value)}
               value={fullName}
             />
@@ -97,7 +97,7 @@ export default function SignUp() {
               aria-label="Enter your username"
               type="text"
               placeholder="Username"
-              className="text-sm text-gray-base  w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded  mb-2 focus:outline-none "
+              className="text-sm text-gray-base  w-full mr-3 py-5 px-4 h-2 border border-gray-300 rounded  mb-2 focus:outline-none "
               onChange={({ target }) => setUserName(target.value)}
               value={userName}
             />
@@ -105,7 +105,7 @@ export default function SignUp() {
               arioa-lang="Enter your password"
               type="password"
               placeholder="Password"
-              className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2 focus:outline-none"
+              className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-300 rounded mb-2 focus:outline-none"
               onChange={({ target }) => setPassword(target.value)}
               value={password}
             />
@@ -119,7 +119,7 @@ export default function SignUp() {
             </button>
           </form>
         </div>
-        <div className="text-center w-full bg-white p-4 border border-gray-primary">
+        <div className="text-center w-full bg-white p-4 border border-gray-300">
           <p>
             Have an account?{' '}
             <Link to={ROUTES.LOGIN} className="font-bold text-blue-medium">

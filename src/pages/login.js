@@ -45,7 +45,7 @@ export default function Login() {
         />
       </div>
       <div className="flex flex-col w-6/12 mb-8 ">
-        <div className="flex  flex-col items-center bg-white p-4 border border-gray-primary mb-4 ">
+        <div className="flex  flex-col items-center bg-white p-4 border border-gray-300 mb-4 ">
           <h1 className="flex justify-center w-full ">
             <img src="/images/logo.png" alt="" className="mt-2  w-6/12 mb-4 " />
           </h1>
@@ -55,7 +55,7 @@ export default function Login() {
               aria-label="Enter your phone number, username, or email"
               type="email"
               placeholder="Phone number, username, or email"
-              className="text-sm text-gray-base  w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded  mb-2 focus:outline-none "
+              className="text-sm text-gray-base  w-full mr-3 py-5 px-4 h-2 border border-gray-300 rounded  mb-2 focus:outline-none "
               onChange={({ target }) => setEmailAddress(target.value)}
               value={emailAddress}
             />
@@ -63,7 +63,7 @@ export default function Login() {
               arioa-lang="Enter your password"
               type="password"
               placeholder="Password"
-              className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2 focus:outline-none"
+              className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-300 rounded mb-2 focus:outline-none"
               onChange={({ target }) => setPassword(target.value)}
               value={password}
             />
@@ -77,7 +77,7 @@ export default function Login() {
             </button>
           </form>
         </div>
-        <div className="text-center w-full bg-white p-4 border border-gray-primary">
+        <div className="text-center w-full bg-white p-4 border border-gray-300">
           <p>
             Don't have an account?{' '}
             <Link to={ROUTES.SIGN_UP} className="font-bold text-blue-medium">
