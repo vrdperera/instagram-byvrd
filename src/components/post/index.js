@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import Header from './header';
 
 export default function Post({ content: { username } }) {
-  return <Header username={username} />;
+  return (
+    <div className="rounded col-span-4  bg-white border border-gray-300 mb-12">
+      <Header username={username} />
+    </div>
+  );
 }
 
 Post.propTypes = {
