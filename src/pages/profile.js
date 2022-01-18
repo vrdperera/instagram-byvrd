@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { getUserByUsername } from '../services/firebase';
 import * as ROUTES from '../constants/routes.js';
+import Header from '../components/profile/header';
 
 export default function Profile() {
   const { username } = useParams();
@@ -24,5 +25,9 @@ export default function Profile() {
     console.log(user);
   }, [history, username]);
 
-  return username ? <div className="bg-gray-500"></div> : null;
+  return username ? (
+    <div className="bg-gray-500">
+      <Header />
+    </div>
+  ) : null;
 }
