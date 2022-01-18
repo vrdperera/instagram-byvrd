@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import * as ROUTES from './constants/routes';
 import UserContext from './context/user';
 import useAuthListener from './hooks/useAuthListener';
+import ProtectedRoute from './helpers/protectedRoute';
 
 //react lazy dynamic imports
 const login = lazy(() => import('./pages/login.js'));
@@ -21,7 +22,9 @@ export default function App() {
           <Switch>
             <Route path={ROUTES.LOGIN} component={login} />
             <Route path={ROUTES.SIGN_UP} component={SignUP} />
-            <Route path={ROUTES.DASHBOARD} component={Dashboard} />
+            <ProtectedRoute user={user} exact path={ROUTES.DASHBOARD}>
+              <Dashboard />
+            </ProtectedRoute>
             <Route component={NotFound} />
           </Switch>
         </Suspense>
