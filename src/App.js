@@ -9,6 +9,7 @@ import ProtectedRoute from './helpers/protectedRoute';
 //react lazy dynamic imports
 const login = lazy(() => import('./pages/login.js'));
 const SignUP = lazy(() => import('./pages/sign-up.js'));
+const Profile = lazy(() => import('./pages/profile.js'));
 const NotFound = lazy(() => import('./pages/notFound.js'));
 const Dashboard = lazy(() => import('./pages/dashboard.js'));
 
@@ -22,6 +23,7 @@ export default function App() {
           <Switch>
             <Route path={ROUTES.LOGIN} component={login} />
             <Route path={ROUTES.SIGN_UP} component={SignUP} />
+            <Route path={ROUTES.PROFILE} component={Profile} />
             <ProtectedRoute user={user} exact path={ROUTES.DASHBOARD}>
               <Dashboard />
             </ProtectedRoute>
