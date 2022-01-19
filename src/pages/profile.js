@@ -24,10 +24,12 @@ export default function Profile() {
     checkUserExist();
   }, [history, username]);
 
+  console.log(user);
+
   return userExist ? (
     <div className="bg-gray-500">
       <Header />
-      <UserProfile username={username} />
+      <UserProfile user={user} />
       <div className="mx-auto max-w-screen-lg">{user.fullName}</div>
     </div>
   ) : null;
