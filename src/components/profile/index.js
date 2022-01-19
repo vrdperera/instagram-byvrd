@@ -32,9 +32,7 @@ export default function Profile({ user }) {
       console.log(photos);
     }
 
-    if (user) {
-      getProfileInfoAndPhotos();
-    }
+    getProfileInfoAndPhotos();
   }, [user]);
 
   return (

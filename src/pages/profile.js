@@ -9,14 +9,13 @@ export default function Profile() {
   const { username } = useParams();
   const history = useHistory();
   const [user, setUser] = useState(null);
-  const [userExist, setUserExist] = useState(false);
 
   useEffect(() => {
     async function checkUserExist() {
       const user = await getUserByUsername(username);
-      if (user.length > 0) {
+      console.log(user);
+      if (user?.length > 0) {
         setUser(user[0]);
-        setUserExist(true);
       } else {
         history.push(ROUTES.NOT_FOUND);
       }
@@ -24,9 +23,7 @@ export default function Profile() {
     checkUserExist();
   }, [history, username]);
 
-  console.log(user);
-
-  return userExist ? (
+  return user?.username ? (
     <div className="bg-gray-500">
       <Header />
       <UserProfile user={user} />
