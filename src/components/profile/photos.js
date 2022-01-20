@@ -3,7 +3,7 @@ import { Skeleton } from '@mui/material';
 
 export default function Photos({ photos }) {
   return (
-    <div className="h-16 border-t border-gray-500 mt-12 pt-4">
+    <div className="h-16 border-t border-gray-300 mt-12 pt-4">
       <div className="grid grid-cols-3 gap-8 mt-4 mb-12">
         {!photos
           ? new Array(12)

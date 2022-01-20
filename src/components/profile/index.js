@@ -16,10 +16,8 @@ export default function Profile({ user }) {
     followCount: 0,
   };
 
-  const [{ profile, photosCollection, followerCount }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [{ profile, photosCollection, followerCount = 0 }, dispatch] =
+    useReducer(reducer, initialState);
 
   useEffect(() => {
     async function getProfileInfoAndPhotos() {
@@ -37,12 +35,12 @@ export default function Profile({ user }) {
 
   return (
     <>
-      {/* <Header
+      <Header
         photosCount={photosCollection ? photosCollection.length : 0}
         profile={profile}
         followerCount={followerCount}
         setFollowerCount={dispatch}
-      /> */}
+      />
       <Photos photos={photosCollection} />
     </>
   );
