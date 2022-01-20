@@ -5,6 +5,7 @@ import * as ROUTES from './constants/routes';
 import UserContext from './context/user';
 import useAuthListener from './hooks/useAuthListener';
 import ProtectedRoute from './helpers/protectedRoute';
+import { Skeleton } from '@mui/material';
 
 //react lazy dynamic imports
 const login = lazy(() => import('./pages/login.js'));
@@ -19,7 +20,7 @@ export default function App() {
   return (
     <UserContext.Provider value={{ user }}>
       <BrowserRouter>
-        <Suspense fallback={<h2>this is Suspense Fallback</h2>}>
+        <Suspense fallback={<Skeleton variant="text" />}>
           <Switch>
             <Route path={ROUTES.LOGIN} component={login} />
             <Route path={ROUTES.SIGN_UP} component={SignUP} />
