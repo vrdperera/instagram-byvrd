@@ -53,6 +53,7 @@ export default function SignUp() {
         setError(error.message);
       }
     } else {
+      setUserName('');
       setError('That username is already exist, please try another.');
     }
   };
@@ -89,7 +90,7 @@ export default function SignUp() {
             <input
               aria-label="Enter your full name"
               type="text"
-              placeholder="Full Name"
+              placeholder="Full name"
               className="text-sm text-gray-base  w-full mr-3 py-5 px-4 h-2 border border-gray-300 rounded  mb-2 focus:outline-none "
               onChange={({ target }) => setFullName(target.value)}
               value={fullName}
