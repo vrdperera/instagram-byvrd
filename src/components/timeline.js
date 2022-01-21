@@ -1,9 +1,15 @@
+import { useContext } from 'react';
+import LoggedInUserContext from '../context/loggedInUser';
 import { Skeleton } from '@mui/material';
 import usePhotos from '../hooks/usePhotos';
+
 import Post from './post';
 
 export default function Timeline() {
-  const { photos } = usePhotos();
+  const { user } = useContext(LoggedInUserContext);
+  const { user: { following } = {} } = useContext(LoggedInUserContext);
+  const { photos } = usePhotos(user);
+
   console.log(photos);
   return (
     <div className="container col-span-2">
