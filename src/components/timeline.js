@@ -13,7 +13,7 @@ export default function Timeline() {
   console.log(photos);
   return (
     <div className="container col-span-2">
-      {!photos ? (
+      {following === undefined ? (
         <>
           {[...new Array(4)].map((_, idx) => {
             return (
@@ -28,11 +28,13 @@ export default function Timeline() {
             );
           })}
         </>
-      ) : photos?.length > 0 ? (
+      ) : following.length === 0 ? (
+        <p className="flex justify-center font-bold">
+          Follow other people to see Photos
+        </p>
+      ) : photos ? (
         photos.map((content) => <Post key={content.docId} content={content} />)
-      ) : (
-        <p className="text-center text-2xl">Follow people to see photos!</p>
-      )}
+      ) : null}
     </div>
   );
 }
